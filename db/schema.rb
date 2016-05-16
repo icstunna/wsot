@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516000514) do
+ActiveRecord::Schema.define(version: 20160516001427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,21 @@ ActiveRecord::Schema.define(version: 20160516000514) do
   end
 
   create_table "positions", force: :cascade do |t|
-    t.string   "ticker"
-    t.string   "name"
-    t.text     "description"
-    t.integer  "price"
-    t.boolean  "short",       default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "short",         default: false
+    t.boolean  "open",          default: true
+    t.integer  "open_price",                    null: false
+    t.integer  "close_price"
+    t.integer  "current_price"
+    t.integer  "quantity"
+    t.integer  "value"
+    t.integer  "portfolio_id"
+    t.integer  "stock_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
+
+  add_index "positions", ["portfolio_id"], name: "index_positions_on_portfolio_id", using: :btree
+  add_index "positions", ["stock_id"], name: "index_positions_on_stock_id", using: :btree
 
   create_table "stocks", force: :cascade do |t|
     t.string   "ticker_symbol"
