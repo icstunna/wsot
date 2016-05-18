@@ -1,3 +1,17 @@
-This is a test
+<h3>
+  THIS IS A LIST OF ALL OF YOUR PORTFOLIOS
+</h3>
+
+<h3>
+  YOU SHOULD BE ABLE TO CLICK A PORTFOLIO TITLE AND REVEAL THE POSITIONS OF THAT PORTFOLIO
+</h3>
+
+<ul>
+  <% @portfolios.each do |portfolio| %>
+    <li><%=portfolio.title%></li>
+  <% end %>
+</ul>
+
+<%= link_to('New Portfolio', new_portfolio_path) %>
 
 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
