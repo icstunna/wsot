@@ -5,6 +5,10 @@ class PortfoliosController < ApplicationController
     @portfolios = Portfolio.all
   end
 
+  def show
+    @portfolio = Portfolio.find(params[:id])
+  end
+
   def new
     @portfolio = Portfolio.new
   end
@@ -15,6 +19,9 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
   end
 
   def destroy

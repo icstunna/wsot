@@ -8,10 +8,10 @@
 
 <ul>
   <% @portfolios.each do |portfolio| %>
-    <li><%=portfolio.title%></li>
+    <li><%=link_to portfolio.title, portfolio_url(portfolio.id) %></li>
   <% end %>
 </ul>
 
-<%= link_to('New Portfolio', new_portfolio_path) %>
+<%= link_to 'New Portfolio', new_portfolio_path %>
 
-<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
