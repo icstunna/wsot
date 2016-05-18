@@ -8,7 +8,9 @@
 
 <ul>
   <% @portfolios.each do |portfolio| %>
-    <li><%=link_to portfolio.title, portfolio_url(portfolio.id) %></li>
+    <li>
+      <%=link_to portfolio.title, portfolio_url(portfolio.id) %> <%= link_to 'delete', "/portfolios/#{portfolio.id}", data: {confirm: 'Are you sure?'}, method: :delete %>
+    </li>
   <% end %>
 </ul>
 

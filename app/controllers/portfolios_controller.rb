@@ -18,13 +18,10 @@ class PortfoliosController < ApplicationController
     redirect_to :portfolios
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.destroy
+    redirect_to :portfolios
   end
 
   private
