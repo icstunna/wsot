@@ -5,3 +5,11 @@
 <h3>
   YOU SPECIFY YOUR PORTFOLIO SPECIFICATIONS
 </h3>
+
+<%= form_for @portfolio do |f| %>
+  <%= f.label :title %>
+
+  <%= f.label :starting_cash %>
+
+  <%= f.submit %>
+<% end %>

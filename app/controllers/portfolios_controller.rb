@@ -9,6 +9,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
+    p params[:portfolio]
   end
 
   def edit
