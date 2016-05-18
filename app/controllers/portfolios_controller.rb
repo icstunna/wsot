@@ -6,15 +6,23 @@ class PortfoliosController < ApplicationController
   end
 
   def new
+    @portfolio = Portfolio.new
   end
 
   def create
-    p params[:portfolio]
+    Portfolio.create(portfolio_params)
+    redirect_to :portfolios
   end
 
   def edit
   end
 
   def destroy
+  end
+
+  private
+
+  def portfolio_params #scary internet people
+    params.require(:portfolio).permit(:title, :cash)
   end
 end
