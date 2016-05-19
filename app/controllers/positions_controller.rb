@@ -4,7 +4,7 @@ class PositionsController < ApplicationController
   end
 
   def new
-    @portfolio = Portfolio.find(params[:portfolio_id])
+    find_models
     @position = Position.new
   end
 

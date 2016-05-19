@@ -6,8 +6,8 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    find_models
     @positions = Position.where(portfolio_id: params[:id])
-    @portfolio = Portfolio.find(params[:id])
   end
 
   def new
@@ -20,7 +20,7 @@ class PortfoliosController < ApplicationController
   end
 
   def destroy
-    @portfolio = Portfolio.find(params[:id])
+    find_models
     @portfolio.destroy
     redirect_to :portfolios
   end
@@ -29,5 +29,9 @@ class PortfoliosController < ApplicationController
 
   def portfolio_params #scary internet people
     params.require(:portfolio).permit(:title, :cash)
+  end
+
+  def find_models
+    @portfolio = Portfolio.find(params[:id])
   end
 end
