@@ -2,4 +2,32 @@
   CREATE NEW POSITION HERE
 </h1>
 
+<ul>
+  <%= form_for [@portfolio, @position] do |f| %>
+    <li>
+      <%= f.label :short? %>
+      <%= f.check_box :short %>
+    </li>
+
+    <li>
+      <%= f.label :open_price %>
+      <%= f.text_field :open_price %>
+    </li>
+
+    <li>
+      <%= f.label :quantity %>
+      <%= f.text_field :quantity %>
+    </li>
+
+    <li>
+      <%= f.label :stock %>
+      <%= f.collection_select :stock_id, Stock.all, :id, :ticker_symbol %>
+    </li>
+
+    <li>
+      <%= f.submit %>
+    </li>
+  <%end%>
+</ul>
+
 <%= link_to 'Back to Portfolio', portfolio_path(id: params[:portfolio_id]) %>

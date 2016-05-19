@@ -6,6 +6,7 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    @positions = Position.where(portfolio_id: params[:id])
     @portfolio = Portfolio.find(params[:id])
   end
 
