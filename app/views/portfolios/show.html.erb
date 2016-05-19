@@ -1,10 +1,13 @@
-<H3>THIS IS WHERE YOUR PORTFOLIO STATISTICS GO!</H3>
+<h3><%= @portfolio.title %></h3>
 
-<h3>THIS IS THE ID</h3>
+<ul>
+  <% @positions.each do |position| %>
+    <li>
+      <%= position.short ? 'SHORT' : 'LONG' %> - <%= position.stock.ticker_symbol %> - $<%= position.quantity * position.open_price %>
+    </li>
+  <% end %>
+</ul>
 
-<H3>CREATE A NEW POSITION HERE</H3>
-
-<%= @portfolio.id %>
 
 <%= link_to 'Back to Portfolios', portfolios_path %>
 
