@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root 'portfolios#index'
 
-  resources :portfolios, only: [:index, :show, :new, :create, :destroy]
+  resources :portfolios, only: [:index, :show, :new, :create, :destroy] do
+    resources :positions
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
