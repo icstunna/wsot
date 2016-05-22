@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518001245) do
+ActiveRecord::Schema.define(version: 20160522233652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,17 +24,15 @@ ActiveRecord::Schema.define(version: 20160518001245) do
   end
 
   create_table "positions", force: :cascade do |t|
-    t.boolean  "short",         default: false
-    t.boolean  "open",          default: true
-    t.integer  "open_price",                    null: false
+    t.boolean  "short",        default: false
+    t.boolean  "open",         default: true
+    t.integer  "open_price",                   null: false
     t.integer  "close_price"
-    t.integer  "current_price"
     t.integer  "quantity"
-    t.integer  "value"
     t.integer  "portfolio_id"
     t.integer  "stock_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "positions", ["portfolio_id"], name: "index_positions_on_portfolio_id", using: :btree
