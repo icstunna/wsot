@@ -2,4 +2,15 @@
   LIST OF TRADEABLE SECURITIES
 </h3>
 
+<ul>
+  <% @stocks.each do |stock| %>
+    <li>
+      <%= stock.ticker_symbol %>
+    </li>
+  <% end %>
+</ul>
+
+
 <%= link_to 'Home', portfolios_path %>
+
+<%= link_to 'New Stock', new_stock_path %>

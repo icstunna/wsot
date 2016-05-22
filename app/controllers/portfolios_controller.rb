@@ -16,13 +16,13 @@ class PortfoliosController < ApplicationController
 
   def create
     Portfolio.create(portfolio_params)
-    redirect_to :portfolios
+    redirect_to portfolios_url
   end
 
   def destroy
     find_models
     @portfolio.destroy
-    redirect_to :portfolios
+    redirect_to portfolios_url
   end
 
   private
