@@ -5,7 +5,7 @@
 <ul>
   <% @stocks.each do |stock| %>
     <li>
-      <%= stock.ticker_symbol %>
+      <%= link_to stock.ticker_symbol, edit_stock_path(stock.id) %> - Price <%= stock.price %>
     </li>
   <% end %>
 </ul>

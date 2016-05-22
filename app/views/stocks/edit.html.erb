@@ -1,0 +1,15 @@
+<h3>Edit Stock Form</h3>
+
+<%= form_for @stock do |f| %>
+
+  <%= f.label :ticker_symbol %>
+  <%= f.text_field :ticker_symbol %>
+
+  <%= f.label :company_name %>
+  <%= f.text_field :company_name %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <%= f.submit %>
+<% end %>
