@@ -3,7 +3,7 @@
 <ul>
   <% @positions.each do |position| %>
     <li>
-      <%= position.short ? 'SHORT' : 'LONG' %> - <%= position.stock.ticker_symbol %> - $<%= position.quantity * position.open_price %>
+      <%= position.short ? 'SHORT' : 'LONG' %> <%= position.stock.ticker_symbol %> Purchase Value: $<%= position.value %> >> Current Value <%= position.current_value %> >> P&L <%= position.profit_loss %>
     </li>
   <% end %>
 </ul>
