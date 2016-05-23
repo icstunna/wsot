@@ -10,7 +10,9 @@ Cash Available for Trading >> $<%= @portfolio.available_cash %>
   <% end %>
 </ul>
 
-
 <%= link_to 'Back to Portfolios', portfolios_path %>
 
-<%= link_to 'New Position', new_portfolio_position_path(portfolio_id: params[:id]) %>
+<% if @portfolio.available_cash < 100 %>
+<% else %>
+  <%= link_to 'New Position', new_portfolio_position_path(portfolio_id: params[:id]) %>
+<% end %>
