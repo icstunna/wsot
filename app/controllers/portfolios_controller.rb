@@ -2,7 +2,6 @@ class PortfoliosController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @response = Markit.new('TSLA')
     @portfolios = Portfolio.all
   end
 
