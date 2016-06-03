@@ -13,7 +13,3 @@ class Markit
     self.class.get("", @options)
   end
 end
-
-# response = Markit.new('NFLX')
-
-# p response.quote['StockQuote']['LastPrice']

@@ -13,3 +13,5 @@
 <%= link_to 'Tradeable Securities', stocks_path %>
 
 <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+
+<%= @response.quote['StockQuote']['LastPrice'] %>
