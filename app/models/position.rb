@@ -7,7 +7,7 @@ class Position < ActiveRecord::Base
   end
 
   def current_value
-    quantity * stock.price
+    quantity * stock.current_price
   end
 
   def profit_loss
