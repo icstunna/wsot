@@ -2,24 +2,24 @@
 
 Cash Available for Trading >> $<%= @portfolio.available_cash %>
 
-<ul>
+<table>
+  <tr>
+    <td> Symbol </td>
+    <td> Quantity </td>
+    <td> Cost </td>
+    <td> Market Value </td>
+    <td> Gain </td>
+  </tr>
   <% @positions.each do |position| %>
-    <li>
-      <%= position.short ? 'SHORT' : 'LONG' %> <%= position.stock.ticker_symbol %>
-    </li>
-    <li>
-      <%= position.quantity %> - <%= position.open_price %>
-      Purchase Value: $<%= position.value %>
-    </li>
-    <li>
-      <%= position.quantity %> - <%= position.stock.price %>
-      Current Value $<%= position.current_value %>
-    </li>
-    <li>
-      P&L $<%= position.profit_loss %>
-    </li>
+    <tr>
+      <td><%= position.short ? 'SHORT' : 'LONG' %> - <%= position.stock.ticker_symbol %></td>
+      <td><%= position.quantity %></td>
+      <td>$<%= position.value %></td>
+      <td>$<%= position.current_value %></td>
+      <td>$<%= position.profit_loss %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
 
 <%= link_to 'Back to Portfolios', portfolios_path %>
 
